@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+
+  ToDo App
+
+{% endblock title %}
+
+
+{% block content %}
+
+    
+    <div class="container text-center">
+        <form method="POST" action="/" class="my-4 mx-4">
+            {% csrf_token %}
+            {{ form }}
+            <input class="btn btn-info save my-4" type="submit" name="save">
+        </form>
+        {% for task in tasks %}
+            <div class="container item-row pt-2 pb-1 mb-2">
+                        
+                <div class = "mb-2">
+                    {% if task.complete == True %}
+                        <strike>{{ task }}</strike>
+                    {% else %}
+                        <span>{{ task }}</span>
+                    {% endif %}
+                </div>
+                <div>
+                    <ul class="ulli">
+                        <li style="float: left;">
+                            <a class="btn btn-sm btn-light mr-1" href="{% url 'update_task' task.id %}"><i class="fas fa-pen"></i></a>
+                            <a class="btn btn-sm btn-light ml-1" href="{% url 'delete_task' task.id %}"><i class="fas fa-trash" style="color: red;"></i></a>
+                        </li>
+                        <li style="float: right;">
+                            {% if task.complete == False %}
+                                <span class="due px-1 py-1">Due : {{ task.due | timeuntil }}</span>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock content %}

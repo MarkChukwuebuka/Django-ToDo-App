@@ -1,0 +1,28 @@
+body {
+    background-color: blueviolet;
+    color: white;
+    font-size: 15px;
+}
+
+.item-row {
+    background-color: green;
+    border-radius: 5px;
+}
+
+.ulli {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.due {
+    background-color: crimson;
+    border-radius: 3px;
+    color: white;   
+}
+
+
+ul li{
+    display: inline;
+    
+}
