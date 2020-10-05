@@ -16,7 +16,7 @@
             <p class="text-center"><b>Update Task</b></p>
             <form method="POST" action="">
                 {% csrf_token %}
-                {{ form }}
+                {{ form.as_p}}
                 <input class="btn btn-sm btn-success form-control mt-3" type="submit" value="Update" name="Update">
             </form>
 

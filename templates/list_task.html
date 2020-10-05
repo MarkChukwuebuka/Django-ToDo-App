@@ -15,7 +15,7 @@
         <div class="container text-center inner-div pb-2 mb-3">
             <form method="POST" action="/" class="my-4 mx-4 py-3">
                 {% csrf_token %}
-                {{ form }}
+                {{ form.as_p }}
                 <input class="btn btn-info save my-4 form-control" type="submit" name="save">
             </form>
             {% for task in tasks %}
@@ -43,7 +43,7 @@
                                         <span class="due px-1 py-1">Due : {{ task.due | timeuntil }}</span> 
                                     {% endif %}
                                 {% else %}
-                                <span class="due px-1 py-1">Completed</span>
+                                    <span class="due px-1 py-1">Completed</span>
                                 {% endif %}
                             </li>
                         </ul>
