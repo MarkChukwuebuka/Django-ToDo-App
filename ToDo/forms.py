@@ -12,7 +12,7 @@ class TaskForm(forms.ModelForm):
 
 
 class UpdateForm(forms.ModelForm):
-    title = forms.CharField(widget=forms.TextInput(attrs = {'placeholder' : 'Enter Task ...'}))
+    title = forms.CharField(widget=forms.TextInput(attrs = {'placeholder' : 'Enter Task ...'}) )
 
     class Meta:
         model = Task

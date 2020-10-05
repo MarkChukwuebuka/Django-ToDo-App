@@ -6,7 +6,7 @@ body {
 
 .item-row {
     background-color: green;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .ulli {
@@ -15,12 +15,34 @@ body {
     justify-content: space-between;
 }
 
+.inner-div{
+    background-color: white;
+    border-radius: 8px;
+    color: black;
+}
+
+hr {
+    border-color:#999966;
+}
+
 .due {
     background-color: crimson;
     border-radius: 3px;
     color: white;   
 }
 
+.div-confirm{
+    width: 70%;
+    color: black;
+    background-color: white;
+    border-radius: 8px;
+    height: 50%;
+}
+
+.del{
+    font-weight: bolder;
+    font-size: 20px;
+}
 
 ul li{
     display: inline;

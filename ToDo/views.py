@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
+from django.utils import timezone
 
 # Create your views here.
 def listTask(request):
     queryset = Task.objects.order_by('complete', 'due')
     form = TaskForm()
+    current = timezone.now
     if request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
@@ -14,6 +16,7 @@ def listTask(request):
     context = {
         'tasks' : queryset,
         'form' : form,
+        'current' : current
     }
     return render(request, 'list_task.html', context)
 
