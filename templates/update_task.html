@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 {% load static %}
 
 {% block title %}
 
-  Confirm Delete?
+  Update Task
 
 {% endblock title %}
 
@@ -16,7 +17,16 @@
             <p class="text-center"><b>Update Task</b></p>
             <form method="POST" action="">
                 {% csrf_token %}
-                {{ form.as_p}}
+
+                <label for="title">Title</label>
+                {% render_field form.title class="form-control mb-3" %}
+
+                <label for="due">Due</label>
+                {% render_field form.due class="form-control mb-3" %}
+                
+                <label for="complete">Complete</label>
+                {% render_field form.complete class="form-control mb-3" %}
+
                 <input class="btn btn-sm btn-success form-control mt-3" type="submit" value="Update" name="Update">
             </form>
 
